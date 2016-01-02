@@ -1,5 +1,7 @@
+---
 title: My first clojurescript app
-date: 2016/01/02 12:30
+date: 2016-01-02 12:30
+---
 
 Over the last few months I have been learning Clojure and Clojurescript. If you don't know what Clojurescript is, then you can find more information [here](https://github.com/clojure/clojurescript) but basically its a way to write clojure code and convert that into Javascript which can be included in any webpage. You can use all the normal functions you have in js like dom manipulation or ajax calls. Its a really awesome way to write functional clojure and also target the web as a platform. 
 

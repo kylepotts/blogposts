@@ -1,5 +1,7 @@
+---
 title: The First Post
-date: 2014/12/31 15:28
+date: 2014-12-31 15:28
+---
 
 Lets hope this works well!
 
