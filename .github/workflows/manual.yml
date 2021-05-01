@@ -5,11 +5,6 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using key
-       uses: appleboy/ssh-action@master
-       with:
-         host: ${{ secrets.HOST }}
-         username: ${{ secrets.USERNAME }}
-         key: ${{ secrets.KEY }}
-         port: ${{ secrets.PORT }}
-         script: cd /root/blogposts; git pull; hugo; cp -r ./public/* /var/www/kptechblog.com/html/.; rm -rf ./public
+    - run: |
+        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "- in ${{ github.event.inputs.home }}!"
