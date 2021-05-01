@@ -1,15 +1,20 @@
-name: Manual Deploy
-on: workflow_dispatch
- jobs:
-   manual-build:
-    name: Manual Build
-     runs-on: ubuntu-latest
-     steps:
-     - name: executing remote ssh commands using key
-       uses: appleboy/ssh-action@master
-       with:
-         host: ${{ secrets.HOST }}
-         username: ${{ secrets.USERNAME }}
-         key: ${{ secrets.KEY }}
-         port: ${{ secrets.PORT }}
-         script: cd /root/blogposts; git pull; hugo; cp -r ./public/* /var/www/kptechblog.com/html/.; rm -rf ./public
+name: Manually triggered workflow
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "- in ${{ github.event.inputs.home }}!"
