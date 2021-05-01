@@ -1,5 +1,5 @@
 name: Manual Deploy
-on: [workflow_dispatch]
+on: workflow_dispatch
  jobs:
    manual-build:
     name: Manual Build
