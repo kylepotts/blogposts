@@ -1,12 +1,9 @@
 name: Manual Deploy
-
 on: [workflow_dispatch]
-
  jobs:
-   build:
-
+   manual-build:
+    name: Manual Build
      runs-on: ubuntu-latest
-    
      steps:
      - name: executing remote ssh commands using key
        uses: appleboy/ssh-action@master
